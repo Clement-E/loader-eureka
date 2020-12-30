@@ -155,7 +155,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
-  background-color: gold;
+  background-color: rgb(235, 234, 233);
   overflow: hidden;
 }
 .container-soutien {
