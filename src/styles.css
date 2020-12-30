@@ -1,0 +1,719 @@
+:root {
+  --border: #012060;
+  --bleu: #5768be;
+  --rouge: #e1000f;
+  --orange: #ff7906;
+  --jaune: #fbe45a;
+  --gris: #808080;
+  --creme: #f7f5e8;
+  --vert: #00b938;
+  --bsize: 3px;
+}
+
+@keyframes texte-slide {
+  0% {
+    top: -60px;
+  }
+  30% {
+    top: -10px;
+  }
+  100% {
+    top: 180px;
+  }
+}
+@keyframes reglettes {
+  0% {
+    left: 6px;
+  }
+  30% {
+    left: 22px;
+  }
+  50% {
+    left: 2px;
+  }
+  60% {
+    left: 14px;
+  }
+  70% {
+    left: 20px;
+  }
+  80% {
+    left: 2px;
+  }
+  100% {
+    left: 28px;
+  }
+}
+@keyframes aiguille {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-25deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(25deg);
+  }
+  70% {
+    transform: rotate(-25deg);
+  }
+  80% {
+    transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes bump {
+  0% {
+    height: 4px;
+  }
+  50% {
+    height: 16px;
+  }
+  100% {
+    height: 4px;
+  }
+}
+@keyframes liquide {
+  0% {
+    margin-top: 60px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+@keyframes ampoule {
+  0% {
+    background-color: var(--jaune);
+  }
+  100% {
+    background-color: var(--jaune);
+  }
+}
+@keyframes rayon {
+  0% {
+    height: 15px;
+  }
+  100% {
+    height: 18px;
+  }
+}
+@keyframes courbe {
+  0% {
+    left: -5px;
+  }
+  100% {
+    left: -140px;
+  }
+}
+@keyframes rapport {
+  0% {
+    top: -72px;
+  }
+  30% {
+    top: -62px;
+  }
+  50% {
+    top: -30px;
+  }
+  60% {
+    top: 20px;
+  }
+  70% {
+    top: 40px;
+  }
+  80% {
+    top: 60px;
+  }
+  100% {
+    top: 72px;
+  }
+}
+@keyframes logo {
+  0% {
+    left: 145px;
+  }
+  100% {
+    left: 200px;
+  }
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.loading {
+  width: 400px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: calc(50vh - 150px);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  background-color: gold;
+  overflow: hidden;
+}
+.container-soutien {
+  position: absolute;
+  width: 40px;
+  height: 130px;
+  left: 30px;
+  overflow: hidden;
+}
+.soutien {
+  font-weight: 900;
+  font-size: 24px;
+  color: var(--border);
+  transform: rotate(-90deg);
+  position: relative;
+  top: -60px;
+  animation: texte-slide 2s ease;
+}
+
+.sol {
+  height: var(--bsize);
+  width: 263px;
+  background-color: var(--border);
+  border-radius: 20px;
+  position: absolute;
+  bottom: 39px;
+  left: 60px;
+}
+/* ----------------- */
+/* MACHINE DE GAUCHE */
+/* ----------------- */
+.left-machine {
+  position: inherit;
+  z-index: 100;
+  width: 400px;
+  height: 300px;
+}
+/* --------- */
+/* left-base */
+/* --------- */
+.left-base {
+  background-color: var(--creme);
+  width: 65px;
+  height: 28px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: solid var(--border) var(--bsize);
+  border-top: none;
+  position: absolute;
+  bottom: 39px;
+  left: 103px;
+}
+.reglette {
+  width: 40px;
+  height: var(--bsize);
+  background-color: var(--border);
+  z-index: 101;
+  border-radius: 20px;
+  position: relative;
+  left: 6px;
+  margin-top: 6px;
+}
+/* animation du left */
+.reglette:after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--border);
+  top: -2px;
+  left: 6px;
+  animation: 2s 2s reglettes;
+}
+/* ------- */
+/* oscillo */
+/* ------- */
+.oscillo {
+  background-color: var(--bleu);
+  width: 76px;
+  height: 40px;
+  border-radius: 8px;
+  border: solid var(--border) var(--bsize);
+  position: absolute;
+  bottom: 69px;
+  left: 97px;
+}
+.oscillo-ecran {
+  background-color: white;
+  width: 40px;
+  height: 26px;
+  border-radius: 8px;
+  border: solid var(--border) var(--bsize);
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  overflow: hidden;
+}
+/* animation du left */
+.courbe {
+  height: 16px;
+  width: 190px;
+  background-image: url(src/img/courbe.svg);
+  position: relative;
+  left: -5px;
+  top: 6px;
+  animation: courbe 3s linear 4.2s;
+}
+.fente {
+  position: absolute;
+  bottom: 32px;
+  left: 53px;
+  background-color: var(--border);
+  width: 20px;
+  height: 3px;
+  border-radius: 8px;
+}
+.container-rapport {
+  background-color: transparent;
+  width: 18px;
+  height: 65px;
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  overflow: hidden;
+}
+/* Animation du top entre -72 et 62 */
+.rapport {
+  background-color: white;
+  height: 65px;
+  position: relative;
+  top: -72px;
+  border: solid var(--border);
+  animation: rapport 2s linear 6s;
+}
+.texte {
+  background-color: var(--border);
+  height: var(--bsize);
+  position: absolute;
+}
+.texte-1 {
+  width: 6px;
+  top: 5px;
+  left: 0;
+}
+.texte-2 {
+  width: 10px;
+  top: 15px;
+  right: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.texte-3 {
+  width: 8px;
+  top: 19px;
+  right: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.texte-4 {
+  width: 9px;
+  top: 35px;
+  left: 0;
+}
+.texte-5 {
+  width: 10px;
+  top: 45px;
+  left: 0;
+}
+.texte-6 {
+  width: 7px;
+  top: 55px;
+  right: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+/* -------- */
+/* raccords */
+/* -------- */
+.raccord-top {
+  background-color: var(--creme);
+  width: 64px;
+  height: 7px;
+  border: solid var(--border) var(--bsize);
+  border-top: none;
+  border-bottom: none;
+  position: absolute;
+  bottom: 115px;
+  left: 103px;
+}
+.raccord-left {
+  background-color: var(--creme);
+  width: 14px;
+  height: 18px;
+  border: solid var(--border) var(--bsize);
+  border-left: none;
+  border-right: none;
+  position: absolute;
+  bottom: 80px;
+  left: 83px;
+}
+/* ----- */
+/* jauge */
+/* ----- */
+.jauge {
+  background-color: var(--bleu);
+  width: 16px;
+  height: 64px;
+  border-radius: 20px;
+  border: solid var(--border) var(--bsize);
+  position: absolute;
+  bottom: 58px;
+  left: 62px;
+}
+.window {
+  background-color: var(--creme);
+  overflow: hidden;
+  width: 6px;
+  height: 50px;
+  border-radius: 20px;
+  border: solid var(--border) var(--bsize);
+  position: absolute;
+  bottom: 4px;
+  left: 2px;
+}
+/* Animation de la margin-top entre 60 et 0 du liquide */
+.liquide {
+  width: 6px;
+  height: 50px;
+  background-color: var(--vert);
+  margin-top: 60px;
+  animation: liquide 1s linear 3s;
+  animation-fill-mode: forwards;
+}
+/* ------- */
+/* ampoule */
+/* ------- */
+.ampoule {
+  position: absolute;
+  width: 50px;
+  height: 30px;
+  bottom: 70px;
+  left: 12px;
+}
+.culo {
+  position: absolute;
+  right: 0;
+  top: 14px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--creme);
+  border-top: solid var(--border) var(--bsize);
+  border-bottom: solid var(--border) var(--bsize);
+}
+/* Animation background-color de l'ampoule */
+.chambre {
+  background-color: white;
+  width: 18px;
+  height: 17px;
+  border: solid var(--border) var(--bsize);
+  border-radius: 50%;
+  position: absolute;
+  right: 4px;
+  top: 9px;
+  animation: ampoule 6s ease 4s;
+  animation-fill-mode: forwards;
+}
+.chambre:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 10px;
+  background-color: var(--border);
+  right: 0;
+  top: 7px;
+}
+.chambre:before {
+  content: "";
+  position: absolute;
+  height: 9px;
+  width: 4px;
+  border-radius: 30px;
+  background-color: var(--border);
+  right: 8px;
+  top: 4px;
+}
+/* ------ */
+/* rayons */
+/* ------ */
+.rayons {
+  position: absolute;
+  bottom: 45px;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+/* Animation de la height des rayons */
+.r-1 {
+  width: 4px;
+  height: 0;
+  background-color: var(--border);
+  position: absolute;
+  right: 25px;
+  border-radius: 30px;
+  animation: rayon 0.3s ease 4.1s;
+}
+.r-2 {
+  width: 4px;
+  height: 0;
+  background-color: var(--border);
+  position: absolute;
+  right: 42px;
+  top: 10px;
+  rotate: -45deg;
+  border-radius: 30px;
+  animation: rayon 0.3s ease 4.1s;
+}
+.r-3 {
+  width: 4px;
+  height: 0;
+  background-color: var(--border);
+  position: absolute;
+  right: 50px;
+  top: 25px;
+  rotate: -90deg;
+  border-radius: 30px;
+  animation: rayon 0.3s ease 4.1s;
+}
+.r-4 {
+  width: 4px;
+  height: 0;
+  background-color: var(--border);
+  position: absolute;
+  right: 42px;
+  bottom: 10px;
+  rotate: 45deg;
+  border-radius: 30px;
+  animation: rayon 0.3s ease 4.1s;
+}
+.r-5 {
+  width: 4px;
+  height: 0;
+  background-color: var(--border);
+  position: absolute;
+  right: 25px;
+  bottom: 0;
+  border-radius: 30px;
+  animation: rayon 0.3s ease 4.1s;
+}
+/* -------- */
+/* top-left */
+/* -------- */
+.top-left-part {
+  background-color: var(--bleu);
+  width: 76px;
+  height: 30px;
+  border-radius: 8px;
+  border: solid var(--border) var(--bsize);
+  position: absolute;
+  bottom: 120px;
+  left: 97px;
+}
+.vis {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--border);
+  position: absolute;
+}
+.vis-tl {
+  top: 3px;
+  left: 3px;
+}
+.vis-tr {
+  top: 3px;
+  right: 3px;
+}
+.vis-bl {
+  bottom: 3px;
+  left: 3px;
+}
+.vis-br {
+  bottom: 3px;
+  right: 3px;
+}
+.bicolore {
+  position: absolute;
+  width: 17px;
+  height: 10px;
+  border: solid var(--border) var(--bsize);
+  top: 6px;
+  left: 12px;
+}
+.bi-rouge {
+  background-color: var(--rouge);
+  width: 7px;
+  height: 10px;
+  border-right: solid var(--border) var(--bsize);
+  float: left;
+}
+.bi-vert {
+  background-color: var(--vert);
+  width: 7px;
+  height: 10px;
+  float: right;
+}
+.cadran {
+  width: 16px;
+  height: 12px;
+  background-color: var(--orange);
+  border-top-left-radius: 103px;
+  border-top-right-radius: 103px;
+  border: var(--border) solid var(--bsize);
+  border-bottom: 0;
+  position: absolute;
+  top: 6px;
+  left: 42px;
+}
+.cadran:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -2px;
+  width: 21px;
+  height: 3px;
+  background-color: var(--border);
+}
+/* Animation du transform entre -25 et 25 */
+.aiguille {
+  position: absolute;
+  bottom: 0px;
+  left: 6px;
+  width: 4px;
+  height: 9px;
+  border-radius: 20px;
+  background-color: var(--border);
+  transform: rotate(0deg);
+  transform-origin: bottom;
+  animation: aiguille 4s linear 2s;
+}
+/* Animation des bumps */
+.bump {
+  position: absolute;
+  bottom: 30px;
+  width: 6px;
+  border: var(--border) solid var(--bsize);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.bump-vert {
+  background-color: var(--vert);
+  height: 4px;
+  right: 10px;
+  animation: bump 1s infinite ease 2.5s;
+}
+.bump-rouge {
+  background-color: var(--rouge);
+  right: 26px;
+  height: 4px;
+  animation: bump 1s infinite ease 3s;
+}
+/* -------- */
+/* coudure  */
+/* -------- */
+.depart .raccord-1 {
+  position: absolute;
+  bottom: 125px;
+  left: 88px;
+  width: 6px;
+  height: 20px;
+  background-color: var(--creme);
+  border: solid var(--bsize) var(--border);
+  border-right: none;
+}
+.depart .coudure {
+  background-image: url(src/img/coudure.svg);
+  background-repeat: no-repeat;
+  width: 51px;
+  height: 36px;
+  position: absolute;
+  bottom: 129px;
+  left: 40px;
+}
+.depart .raccord-2 {
+  position: absolute;
+  bottom: 162px;
+  left: 37px;
+  width: 21px;
+  height: 6px;
+  background-color: var(--creme);
+  border: solid var(--bsize) var(--border);
+}
+.depart .entonoire {
+  background-image: url(src/img/entonoire.svg);
+  background-repeat: no-repeat;
+  width: 43px;
+  height: 14px;
+  position: absolute;
+  bottom: 170px;
+  left: 29px;
+}
+
+/* ----------------- */
+/* TAPIS ROULANT */
+/* ----------------- */
+.tapis {
+  position: absolute;
+  bottom: 70px;
+  left: 166px;
+  z-index: 90;
+  width: 120px;
+  height: 16px;
+  background-color: var(--bleu);
+  border: solid var(--border) var(--bsize);
+  border-radius: 20px;
+}
+.roue {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--border);
+  position: absolute;
+}
+.roue-1 {
+  top: 4px;
+  left: 20px;
+}
+.roue-2 {
+  top: 4px;
+  left: 63px;
+}
+.roue-3 {
+  top: 4px;
+  left: 106px;
+}
+.pied {
+  position: absolute;
+  bottom: 39px;
+  left: 240px;
+  z-index: 80;
+  width: 30px;
+  height: 30px;
+  background-color: var(--creme);
+  border: solid var(--border) var(--bsize);
+  border-radius: 8px;
+}
+/* Animation logo eureka left de 154 a 240px */
+.logo {
+  background-image: url(src/img/logo.png);
+  background-position: contain;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 50px;
+  position: absolute;
+  z-index: 20;
+  bottom: 62px;
+  left: 90px;
+  animation: logo 3s linear 7s;
+  animation-fill-mode: forwards;
+}
